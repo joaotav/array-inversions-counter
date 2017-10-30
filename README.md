@@ -1,7 +1,7 @@
 # Array Inversions
 The number of inversions is given by the number of pairs (i,j) in the array for which the following is true:   
-*The index j is greater than the index i : **i < j**    
-*The value in the position given by index i is greater than the value in the position given by j: **Array[i] > Array[j]**    
+* The index j is greater than the index i : **i < j**    
+* The value in the position given by index i is greater than the value in the position given by j: **Array[i] > Array[j]**    
 
 This problem can be easily solved using two for loops, but that takes **Θ(n²)** which is not very efficient for large arrays.   
 This code aims to solve this problem in **Θ(n log n)** time using merge sort, which is an divide and conquer algorithm. 
