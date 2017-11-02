@@ -98,4 +98,6 @@ int main(int argc, char* argv[]){
   mergeSort(array, 0, n-1, aux);
 
   cout << "[+] Number of inversions: " << inversions << endl;
+  
+  delete(aux, array);
 }
