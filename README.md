@@ -1,16 +1,24 @@
-# Array Inversions
-The number of inversions is given by the number of pairs (i,j) in the array for which the following is true:   
-* The index j is greater than the index i : **i < j**    
-* The value in the position given by index i is greater than the value in the position given by j: **Array[i] > Array[j]**    
+# Array Inversions Counter
 
-This problem can be easily solved using two for loops, but that takes **Θ(n²)** which is not very efficient for large arrays.   
-This code aims to solve this problem in **Θ(n log n)** time using merge sort, which is an divide and conquer algorithm. 
+An inversion in an array `Array` is a pair of elements `Array[i]` and `Array[j]` for which the following is true:
 
-The code takes a text file as input, via command line argument. The first line must contain the number of items in the array,   
-while the following lines have one value each.
+- The index `j` is greater than the index `i` : `i < j`    
+- The element at index `i` is greater than the element at index `j`: `Array[i] > Array[j]`
 
-**Example:**   
+Counting inversions is a common problem in computer science, and is often used to assess the degree of "sortedness" of an array. This problem can be easily solved by a strategy that uses nested loops, however this requires **Θ(n²)** time, making it inefficient for large arrays.  
 
+This implementation solves this problem in **Θ(n log n)** time using by utilizing the merge sort algorithm.
+
+
+
+## Input format: ##
+The program expects an input file passed as a command-line argument. The input file should be formatted as follows:
+
+- The first line contains a single integer, `n`, representing the number of elements in the array.
+- The subsequent `n` lines contain the integers of the array, one per line.
+
+### Example input: ###
+```
 10   
 54044   
 14108   
@@ -22,6 +30,19 @@ while the following lines have one value each.
 53777   
 49689   
 9083   
-   
-# To run the code:   
-Compile using g++ and run the executable ./<executable> <txt>
+```
+
+## Compilation and Execution
+
+To run this program, you will need to compile the C++ code and execute the resulting executable, passing the path to your input file as a command line argument.
+First, ensure you have a C++ compiler (like `g++`) installed on your system. Compile the source code using the following command:
+
+```bash
+g++ inversions.cpp -o inv_counter
+```
+
+Then execute the program with the following command, replacing `<input_file>` with the path to the file containing the array elements:
+
+```
+./inv_counter <input_file>
+```
